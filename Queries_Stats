@@ -1,0 +1,31 @@
+----------# accidents -------------------------------
+Select country,sum(accidents) as number_accidents
+From public.plane_accidents 
+group by country
+order by number_accidents Desc
+-----------------------------------------------------
+
+-----Net Sales Travel Insurance Data-----------------
+Select Destination,Round(Sum(Netsales)) as sales
+from public.trav_insurance 
+Group by Destination 
+Order by sales desc; 
+-----------------------------------------------------
+
+--Net sales for insured who are 50 or under----------
+Select Destination,Round(Sum(Netsales)) as sales
+from public.trav_insurance 
+Where age<=50
+Group by Destination 
+Order by sales desc; 
+------------------------------------------------------
+
+
+--Net sales for insured who are 50 over---------------        
+Select Destination,Round(Sum(Netsales)) as sales
+from public.trav_insurance 
+Where age>50
+Group by Destination 
+Order by sales desc; 
+------------------------------------------------------
+

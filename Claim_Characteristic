@@ -1,0 +1,85 @@
+Select distinct duration
+from public.trav_insurance
+Order by duration asc
+
+Select Gender,Count(gender) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes'
+Group by Gender ;
+
+
+----------------- Total --------------
+Select Age,Count(Claim) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes'
+Group by Age 
+Order by Gender_Claims DESC;
+--------------------------------------
+
+-----------------Male-----------------
+Select Age,Count(Claim) as Male_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and Gender = 'M'
+Group by Age 
+Order by Male_Claims DESC;
+--------------------------------------
+
+---------------Female-----------------
+Select Age,Count(Claim) as Female_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and Gender = 'F'
+Group by Age 
+Order by Female_Claims DESC;
+--------------------------------------
+
+---------Product----------------------
+Select Productname,Count(Claim) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes'
+Group by Productname
+Order by Gender_Claims DESC;
+--------------------------------------
+
+---------Product Male----------------
+Select Productname,Count(Claim) as Male_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and gender = 'M'
+Group by Productname
+Order by Male_Claims DESC;
+--------------------------------------
+
+---------Product Female----------------
+Select Productname,Count(Claim) as Male_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and gender = 'F'
+Group by Productname
+Order by Male_Claims DESC;
+--------------------------------------
+
+---------Destination------------------
+Select Destination,Count(Claim) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes'
+Group by Destination
+Order by Gender_Claims DESC;
+--------------------------------------
+
+---------Destination Male-------------
+Select Destination,Count(Claim) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and Gender = 'M'
+Group by Destination
+Order by Gender_Claims DESC;
+--------------------------------------
+
+---------Destination Female-----------
+Select Destination,Count(Claim) as Gender_Claims
+From public.trav_insurance
+Where Claim = 'Yes' and Gender = 'F'
+Group by Destination
+Order by Gender_Claims DESC;
+--------------------------------------
+
+
+Select distinct gender 
+from public.trav_insurance
